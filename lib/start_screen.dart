@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class StartScreen extends StatelessWidget {
   const StartScreen(this.startQuiz, {super.key});
@@ -26,9 +27,9 @@ class StartScreen extends StatelessWidget {
           ),
           ElevatedButton.icon(
             onPressed: startQuiz,
-            label: const Text(
+            label: Text(
               'Start Quiz',
-              style: TextStyle(color: Colors.white),
+              style: GoogleFonts.alatsi(),
             ),
             icon: const Icon(Icons.arrow_forward_sharp),
           ),
