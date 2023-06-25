@@ -21,6 +21,13 @@ class _QuizState extends State<Quiz> {
     });
   }
 
+  void restartQuiz() {
+    setState(() {
+      selectedAnswers = [];
+      activeScreen = 'start-screen';
+    });
+  }
+
   void chooseAnswers(String answer) {
     selectedAnswers.add(answer);
 
@@ -40,7 +47,8 @@ class _QuizState extends State<Quiz> {
     }
 
     if (activeScreen == 'result-screen') {
-      screenWidget = ResultsScreen(chosenAnswers: selectedAnswers);
+      screenWidget =
+          ResultsScreen(chosenAnswers: selectedAnswers, onTap: restartQuiz);
     }
     return MaterialApp(
       home: Scaffold(
